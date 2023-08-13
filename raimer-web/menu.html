@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu | Keopi Stoir</title>
+  <link rel="icon" href="images/tab-icon.png" />
+
+  <!--CSS Styles Start Here-->
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+    * {
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      list-style: none;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    nav {
+      background: #867070;
+      height: 80px;
+      width: 100%;
+      position: fixed;
+    }
+
+    .logo-img {
+      margin-left: 150px;
+      margin-top: -20px;
+    }
+
+    nav ul {
+      float: right;
+      margin-right: 150px;
+    }
+
+    nav ul li {
+      display: inline-block;
+      line-height: 80px;
+      margin: 0 30px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-size: 17px;
+      text-transform: uppercase;
+      border-radius: 3px;
+    }
+
+    a.active,
+    a:hover {
+      background: #ffbfa9;
+      transition: .5s;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      height: 500px;
+      margin: 50px;
+      box-shadow: 5px 5px 20px black;
+      overflow: hidden;
+    }
+
+    .layer1 {
+      height: 500px;
+      width: 100%;
+      border-radius: 3px;
+    }
+
+    .intro {
+      height: 70px;
+      width: 500px;
+      padding: 6px;
+      box-sizing: border-box;
+      position: sticky;
+      bottom: -1px;
+      background: rgb(27, 27, 27, .5);
+      color: white;
+      transition: .5s;
+    }
+
+    .intro2 {
+      height: 100px;
+      width: 500px;
+      padding: 6px;
+      box-sizing: border-box;
+      position: sticky;
+      bottom: -5px;
+      background: rgb(27, 27, 27, .5);
+      color: white;
+      transition: .5s;
+    }
+
+    .intro3 {
+      height: 100px;
+      width: 500px;
+      padding: 6px;
+      box-sizing: border-box;
+      position: sticky;
+      bottom: -9px;
+      background: rgb(27, 27, 27, .5);
+      color: white;
+      transition: .5s;
+    }
+
+    .intro4 {
+      height: 100px;
+      width: 500px;
+      padding: 6px;
+      box-sizing: border-box;
+      position: sticky;
+      bottom: -13px;
+      background: rgb(27, 27, 27, .5);
+      color: white;
+      transition: .5s;
+    }
+
+    .intro5 {
+      height: 100px;
+      width: 500px;
+      padding: 6px;
+      box-sizing: border-box;
+      position: sticky;
+      bottom: -17px;
+      background: rgb(27, 27, 27, .5);
+      color: white;
+      transition: .5s;
+    }
+
+    .intro h1,
+    .intro3 h1,
+    .intro4 h1,
+    .intro5 h1 {
+      margin: 10px;
+      font-size: 30px;
+    }
+
+    .intro p,
+    .intro3 p,
+    .intro4 p,
+    .intro5 p {
+      font-size: 20px;
+      margin: 20px;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .intro2 p {
+      font-size: 20px;
+      margin: 20px;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .intro2 h1 {
+      margin: 5px;
+      font-size: 30px;
+
+    }
+
+    .card:hover {
+      cursor: pointer;
+    }
+
+    .card:hover .intro,
+    .card:hover .intro2,
+    .card:hover .intro3,
+    .card:hover .intro4,
+    .card:hover .intro5 {
+      height: 220px;
+      background: black;
+    }
+
+    .card:hover .intro p,
+    .card:hover .intro2 p,
+    .card:hover .intro3 p,
+    .card:hover .intro4 p,
+    .card:hover .intro5 p {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .menu-header {
+      width: 100%;
+      height: 150px;
+      margin-top: 80px;
+    }
+
+    .header h1 {
+      text-align: center;
+      margin-top: -130px;
+      font-size: 50px;
+    }
+
+
+    .content {
+      margin-top: 100px;
+      margin-bottom: 130px;
+      text-align: center;
+    }
+
+    .footer {
+
+      width: 100%;
+      padding: 100px 15%;
+      background: #333;
+      color: #efefef;
+      display: flex;
+    }
+
+    .footer div {
+      text-align: center;
+    }
+
+    .col-2 {
+      flex-grow: 2;
+    }
+
+    .footer div h3 {
+      font-weight: 300;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .col-1 a {
+      display: block;
+      text-decoration: none;
+      color: #efefef;
+      margin-bottom: 10px;
+    }
+
+    .form-footer input {
+      width: 400px;
+      height: 45px;
+      border-radius: 4px;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      outline: none;
+      border: none;
+    }
+
+    .form-footer button {
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+      border-radius: 30px;
+      padding: 10px 30px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+  </style>
+  <!--CSS Styles End Here-->
+</head>
+
+<body>
+  <nav>
+    <img class="logo-img" src="images/logo.png" width="130" height="130" />
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="contactus.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="header">
+    <img class="menu-header" src="images/header.png">
+    <h1>MENU</h1>
+  </div>
+
+  <div class="content">
+    <h1>ALL PRODUCTS</h1>
+    <!--First Layer-->
+    <div class="container">
+      <div class="card">
+        <img src="images/Black cookie latte (1).png" width="500px" height="500px" class="layer1" />
+        <div class="intro">
+          <h1>Black Cookie Latte</h1>
+          <p>Si meme ay maganda</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/Black.png" class="layer1" />
+        <div class="intro">
+          <h1>Black</h1>
+          <p>Si meme ay maganda</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/Caramel Macchiato.png" class="layer1" />
+        <div class="intro">
+          <h1>Caramel Macchiato</h1>
+          <p>Si meme ay maganda</p>
+        </div>
+      </div>
+    </div>
+    <!--Second Layer-->
+    <div class="container">
+      <div class="card">
+        <img src="images/coffee mocha.png" class="layer1" />
+        <div class="intro2">
+          <h1>Coffee Mocha</h1>
+          <p>Si meme ay maganda</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/Cookie Crumble Latte.png" class="layer1" />
+        <div class="intro2">
+          <h1>Cookie Crumble Latte</h1>
+          <p>Si meme ay maganda</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/Dark Choco Latte.png" class="layer1" />
+        <div class="intro2">
+          <h1>Dark Choco Latte</h1>
+          <p>Si meme ay maganda</p>
+        </div>
+      </div>
+    </div>
+    <!--Third Layer-->
+    <div class="container">
+      <div class="card">
+        <img src="images/Everyday Latte.png" class="layer1" />
+        <div class="intro3">
+          <h1>Everyday Latte</h1>
+          <p>Si meme ay maganda</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/Flavored Coffee.png" class="layer1" />
+        <div class="intro3">
+          <h1>Flavored Coffee</h1>
+          <p>Si meme ay maganda</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/Java.png" class="layer1" />
+        <div class="intro3">
+          <h1>Java</h1>
+          <p>Si meme ay maganda</p>
+        </div>
+      </div>
+    </div>
+    <!--Fourth Layer-->
+    <div class="container">
+      <div class="card">
+        <img src="images/Matcha Latte.png" class="layer1" />
+        <div class="intro4">
+          <h1>Matcha Latte</h1>
+          <p>Si meme ay maganda</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/Melacca .png" class="layer1" />
+        <div class="intro4">
+          <h1>Melacca</h1>
+          <p>Si meme ay maganda</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/Necta.png" class="layer1" />
+        <div class="intro4">
+          <h1>Necta</h1>
+          <p>Si meme ay maganda</p>
+        </div>
+      </div>
+    </div>
+    <!--Fifth Layer-->
+    <div class="container">
+      <div class="card">
+        <img src="images/Red Velvet Latte.png" class="layer1" />
+        <div class="intro5">
+          <h1>Red Velvet Latte</h1>
+          <p>Si meme ay maganda</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/White.png" class="layer1" />
+        <div class="intro5">
+          <h1>White</h1>
+          <p>Si meme ay maganda</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="col-1">
+      <h3>USEFUL LINKS</h3>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+      <a href="#">Shop</a>
+      <a href="#">Blog</a>
+    </div>
+    <div class="col-2">
+      <h3>NEWSLETTER</h3>
+      <form action="#" class="form-footer">
+        <input type="text" placeholder="Your Email Address">
+        <br>
+        <button type="submit">SUBSCRIBE NOW</button>
+      </form>
+    </div>
+    <div class="col-3">
+      <h3>CONTACT</h3>
+      <p>123, XYZ Road, BSK 3 <br>Bangalore, Karnataka, IN</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
